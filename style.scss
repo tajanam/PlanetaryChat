@@ -1,0 +1,518 @@
+body {
+    box-sizing: border-box;
+    display: flex;
+    height: 90%;
+    overflow: hidden;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background: url(images/vecteezy_blue-green-nebula-space-background-wallpaper_8854669_733.jpg) no-repeat center;
+    background-size: cover;
+    animation: movement 100s 2s infinite ease-in;    
+}
+
+@keyframes movement {
+    0% {
+
+        background-position: center;
+    }
+    25% {
+      
+        background-position:left;
+    }
+    50% {
+
+        background-position:center;  
+    }
+    75% {
+      
+        background-position:right;
+    }
+    100% {
+       
+        background-position:center;
+    }
+  }
+
+main{
+    display: flex;
+    flex-direction: column;
+    height: 97vh;
+    
+}
+
+#chat-room{
+    align-self: center;
+    height: 85vh;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1%;
+    position: absolute;
+    z-index: 3;
+}
+
+#sidebar{
+    display: flex;
+    height: 100%;
+    width: 20%;
+    flex-direction: column;
+    align-items: flex-end;
+    align-self: flex-end;
+    margin-top: 14px;
+    margin-right: 10px;
+    z-index: 3;
+}
+.members-count,
+.members-list,
+.messages {
+    display: flex;
+    border: 1px solid #012e30;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: cyan 2px -1px 5px;
+    background-color: #c3c3c322;
+}
+
+.members-list{
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    text-shadow: white 1px 1px 20px;
+}
+
+.members-list,
+.members-count{
+    justify-content: center;
+    background-color: #012e30;
+}
+
+.members-count{
+    color: rgb(0, 253, 106);
+    width: 50%;
+    font-weight: bold;
+}
+
+.messages {
+    display: flex;
+    height: 85%;
+    overflow: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.message {
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    margin: 4px;
+    background-color: rgba(8, 7, 7, 0.596);
+    border-radius: 10px;
+    color: white;
+    text-shadow: white 1px 1px 30px;
+    gap: 2px;
+}
+
+.member {
+    position: relative;
+    display: block;
+    margin-left: 4px;
+    margin-right: 5px;
+}
+
+.message-form {
+    display: flex;
+    margin-bottom: 1%;
+    width: 80%;
+    :focus{
+        border-color: rgb(0, 255, 234);
+        box-shadow: rgba(255, 251, 206, 0.795) 1px 1px 10px;
+        outline: rgb(255, 241, 84);
+    }
+}
+.message-form__input {
+    flex-grow: 1;
+    border: rgb(0, 255, 204) inset 1px;
+    padding: 8px 10px 12px 12px;
+    font-size: 16px;
+    background-color: #012e30;
+    color:cyan;
+
+}
+
+.message-form__button {
+    margin-left: 10px;
+    display: block;
+    padding: 10px 10px;
+    background: #012e30;
+    color: rgb(0, 255, 157);
+    border: none;
+    letter-spacing: 1px;
+    text-decoration: none;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.254);
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#bottom-container{
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+}
+
+#preview {
+    display: flex;
+    align-self: flex-start;
+}
+
+a{
+    display: block;
+    position: absolute;
+    padding: 10px 10px;
+    background: #012e30;
+    color: rgb(0, 255, 157);
+    border: none;
+    letter-spacing: 1px;
+    text-decoration: none;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.254);
+    overflow: hidden;
+    cursor: pointer;
+    :before{
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        bottom: 2px;
+        width: 50%;
+        background-color: rgba(12, 22, 17, 0.054);
+    }
+    span:nth-child(1){
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        background: linear-gradient(to right, rgba(0, 255, 255, 0.268), rgb(0, 255, 145));
+        animation: animate1 2s linear infinite;
+        }
+        @keyframes animate1{
+            0%{
+                transform: translateX(-100%);
+            }
+            100%{
+                transform: translateX(100%);
+            }
+        }
+        :nth-child(2){
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 1px;
+            background: linear-gradient(to bottom, rgba(0, 255, 255, 0.157), rgb(0, 255, 145));
+            animation: animate2 2s linear infinite;
+            animation-delay: 1s;
+        } 
+        @keyframes animate2{
+            0%{
+                transform: translateY(-100%);
+            }
+            100%{
+                transform: translateY(100%);
+            }
+        }
+        :nth-child(3){
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 1px;
+            width: 100%;
+            background: linear-gradient(to left, rgba(0, 255, 255, 0.157), rgb(0, 255, 145));
+            animation: animate3 2s linear infinite;
+            animation-delay: 2s;
+        } 
+        @keyframes animate3{
+            0%{
+                transform: translateX(100%);
+            }
+            100%{
+                transform: translateX(-100%);
+            }
+        }
+        :nth-child(4){
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 80%;
+            width: 1px;
+            background: linear-gradient(to top, rgba(0, 255, 255, 0.157), rgb(0, 255, 145));
+            animation: animate4 2s linear infinite;
+            animation-delay: 3s;
+        }  
+        @keyframes animate4{
+            0%{
+                transform: translateY(100%);
+            }
+            100%{
+                transform: translateY(-100%);
+            }
+        }        
+}
+
+#myAvatar{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    box-shadow: cyan 1px 1px 6px;
+    background-color: #012e30;
+    width: 50%;
+}
+#avatar {
+    display: flex;
+    background-color: rgba(7, 4, 0, 0.086);
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    color: rgba(0, 255, 255, 0.485);
+    height: 80px;
+    width: 80px;
+    border: 2px solid rgba(0, 255, 225, 0.733);
+    border-radius: 50%;
+    box-shadow: rgb(255, 244, 188) 1px 1px 10px;
+    transition: background ease-out 200ms;
+}
+#avatar-user{
+    height: 40px;
+    width: 40px;
+    border: none;
+    border-radius: 50px;
+    box-shadow: cyan -1px -1px 3px;
+}
+  
+
+input[type="file"] {
+    display: none;
+}
+
+div#popup{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    color:#dfdfdf;
+
+    #borderform{
+        text-align: center;
+        background-color: rgba(46, 44, 50, 0.683);
+        z-index: 2;
+        height: 50%;
+        border: 1px solid cyan;
+        border-radius: 90px;
+        box-shadow: 5px 10px 50px cyan;
+        h1{
+            font-size: 1.8em;
+            margin-top: 2em;
+            margin-bottom: 4em;
+            padding-left: 1em;
+            padding-right: 1em;
+        }
+        
+    }
+    #myQuestion{
+        display: flex;
+        justify-content: center;
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+}
+
+#canvas{
+    position: absolute;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+}
+
+// WINDOW RESIZE
+
+@media screen and (max-width: 1300px){
+    #sidebar{
+        .members-list,
+        .members-count{
+            width: 120px;
+            margin-bottom: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 1070px){
+
+    #myAvatar{
+        align-self: flex-start;
+        margin-left: 200px;
+    }
+    #chat-room{
+        align-self: flex-start;
+        margin-left: 100px;
+    }
+}
+
+@media screen and (max-width: 870px){
+    body{
+        background-size: 190%;
+        background: url(images/vecteezy_blue-green-nebula-space-background-wallpaper_8854669_733.jpg) repeat center;
+    }
+    #myAvatar{
+        height: 15%; 
+        width: 20%;
+        align-self: flex-end;
+        margin-right: 2px;
+        margin-top: 1px;
+        justify-content: flex-end;
+        border: none;
+        box-shadow: none;
+        background: none;
+        #avatar{
+            margin-right: 32px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            background-color: #012e30;
+        };
+    }
+    #chat-room{
+        margin-top: 10px;
+        margin-left: 8px;
+        align-self: flex-start;
+        width: 77%;
+    }
+    #sidebar{
+            align-items: flex-end;
+            width: 20%;
+            margin-top: 8px;
+            margin-right: 3px;
+            
+            .members-count,.members-list{
+                width: 78%;
+                box-shadow: none;
+                border: cyan inset 1px;
+            }
+    }
+}
+
+@media screen and (max-width: 530px){
+    body{
+        background-size: 450%
+    }
+    #myAvatar{
+        height: 15%; 
+        width: 76%;
+        align-self: flex-end;
+        justify-content: flex-end;
+        #avatar{
+            height: 56px;
+            width: 56px;
+            margin-right: 8px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            p{
+                font-size: 14px;
+                font-weight: bold;
+                text-align: center;
+                
+            }
+        };
+    }
+}
+
+@media screen and (max-width: 517px) {
+    
+    #avatar{
+        margin-right: 14px;
+    }
+    .members-count,.members-list{
+        width: 70%;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 415px){
+    #myAvatar{
+        display: none;
+
+    }
+    #sidebar{
+        display: none;
+    }
+    #chat-room{
+        width: 95%;
+        height: 101%;
+    }
+    #bottom-container{
+        gap:0;
+        #upload-button{
+            display: none !important;
+        }
+        .message-form{
+            width: 100%;
+        }
+    }
+}   
+
+
+@media screen and (max-width: 390px){
+    #myAvatar{
+        display: none;
+
+    }
+    #sidebar{
+        display: none;
+    }
+    #chat-room{
+        width: 95%;
+        height: 101%;
+    }
+    #bottom-container{
+        gap:0;
+        #upload-button{
+            display: none !important;
+        }
+        .message-form{
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 320px){
+    #myAvatar{
+        display: none;
+
+    }
+    #sidebar{
+        display: none;
+    }
+    #chat-room{
+        width: 95%;
+        height: 101%;
+    }
+    #bottom-container{
+        gap:0;
+        #upload-button{
+            display: none !important;
+        }
+        .message-form{
+            width: 100%;
+        }
+    }
+}

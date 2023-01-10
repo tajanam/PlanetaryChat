@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+  <!--<script type='text/javascript' src='http://0.0.0.0:8080/scaledrone.js'></script>-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    
+    <div id="myAvatar">
+        <div id="avatar">No Picture</div>
+    </div>
+    <canvas id="canvas"></canvas>
+    <main>
+        <div id="sidebar">
+            <div class="members-count">-</div>
+            <div class="members-list">-</div>
+        </div>
+        <div id="chat-room">
+            <span></span>
+            <span></span>
+            <div class="messages"></div>
+            <div id="bottom-container">
+                <input type="file" name="image" id="image" accept="image/*" />
+                    <div id="preview-wrapper">
+                        <a id="upload-button" aria-label="upload image" aria-describedby="image">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Upload avatar
+                        </a>
+                    </div>    
+                <form class="message-form" onsubmit="return false;">
+                    <input class="message-form__input" placeholder="Type a message.." type="text" id="poruka"/>
+                    <input class="message-form__button" value="Send" type="submit" id="gumb"/>
+                </form>
+            </div>
+        </div>
+    </main>
+    </div>
+    <script src="chatapp.js"></script>
+    <script src="canvas.js"></script>
+        
+</body>
+</html>
